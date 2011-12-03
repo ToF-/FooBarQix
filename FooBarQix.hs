@@ -12,8 +12,7 @@ fooBarQix = result .
 result = fst
 number = snd
 
-outputForRule restriction projection x | restriction x = output (projection x) x
-outputForRule _ _ x = x
+outputForRule restriction projection x = if restriction x then output (projection x) x else x
 
 output s (r,n) = (r++s,n)
  
