@@ -12,14 +12,13 @@ fooBarQix = result .
 result = fst
 number = snd
 
-outputForRule restriction projection x = if restriction x then output (projection x) x else x
+outputForRule restriction projection x = 
+    if restriction x then output (projection x) x else x
 
 output s (r,n) = (r++s,n)
  
-divisible :: Int -> Int -> Bool
 divisible d n = mod n d == 0
  
-convert :: Char -> String
 convert '3' = "Foo"
 convert '5' = "Bar"
 convert '7' = "Qix"
